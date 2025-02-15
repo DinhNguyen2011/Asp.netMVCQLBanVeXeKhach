@@ -1,0 +1,27 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.PhanQuyen
+
+@{
+    ViewData["Title"] = "Xóa Quyền";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Xóa Quyền</h1>
+
+<p>Bạn có chắc muốn xóa quyền sau?</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Quyền</th>
+        <td>@Model.MaQuyen</td>
+    </tr>
+    <tr>
+        <th>Tên Quyền</th>
+        <td>@Model.TenQuyen</td>
+    </tr>
+</table>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.MaQuyen" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

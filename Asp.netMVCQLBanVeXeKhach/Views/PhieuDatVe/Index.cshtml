@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Asp.netMVCQLBanVeXeKhach.Models.PhieuDatVe>
+
+@{
+    ViewData["Title"] = "Danh sách phiếu đặt vé";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách phiếu đặt vé</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm phiếu đặt vé mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã phiếu</th>
+            <th>Email</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaPhieu</td>
+                <td>@item.Email</td>
+                <td>@item.NgayDat</td>
+                <td>@item.TongTien</td>
+                <td>@item.TrangThai</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MaPhieu" class="btn btn-warning">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@item.MaPhieu" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

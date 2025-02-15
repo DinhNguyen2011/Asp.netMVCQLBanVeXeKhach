@@ -1,0 +1,11 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.TuyenXe
+
+<h2>Xóa Tuyến Xe</h2>
+<p>Bạn có chắc chắn muốn xóa Tuyến Xe này không?</p>
+<p>Điểm Đi: @Model.DiemDi</p>
+<p>Điểm Đến: @Model.DiemDen</p>
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="MaTuyen" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

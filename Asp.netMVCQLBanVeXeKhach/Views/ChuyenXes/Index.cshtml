@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Asp.netMVCQLBanVeXeKhach.Models.ChuyenXe>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThoiDiemKhoiHanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThoiDiemDenDuKien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaVe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenChuyenXe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BienSoXeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaTuyenNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiDiemKhoiHanh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiDiemDenDuKien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaVe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenChuyenXe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BienSoXeNavigation.Bienso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaTuyenNavigation.MaTuyen)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaChuyen">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaChuyen">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaChuyen">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

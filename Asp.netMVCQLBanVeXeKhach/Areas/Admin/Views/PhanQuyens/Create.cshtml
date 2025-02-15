@@ -1,0 +1,17 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.PhanQuyen
+
+@{
+    ViewData["Title"] = "Thêm Quyền Mới";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Thêm Quyền Mới</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="TenQuyen">Tên Quyền</label>
+        <input type="text" class="form-control" id="TenQuyen" name="TenQuyen" required>
+    </div>
+    <button type="submit" class="btn btn-success">Thêm</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

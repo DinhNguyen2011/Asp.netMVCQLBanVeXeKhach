@@ -1,0 +1,57 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.ChuyenXe
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>ChuyenXe</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaChuyen" />
+            <div class="form-group">
+                <label asp-for="MaTuyen" class="control-label"></label>
+                <select asp-for="MaTuyen" class="form-control" asp-items="ViewBag.MaTuyen"></select>
+                <span asp-validation-for="MaTuyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThoiDiemKhoiHanh" class="control-label"></label>
+                <input asp-for="ThoiDiemKhoiHanh" class="form-control" />
+                <span asp-validation-for="ThoiDiemKhoiHanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThoiDiemDenDuKien" class="control-label"></label>
+                <input asp-for="ThoiDiemDenDuKien" class="form-control" />
+                <span asp-validation-for="ThoiDiemDenDuKien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GiaVe" class="control-label"></label>
+                <input asp-for="GiaVe" class="form-control" />
+                <span asp-validation-for="GiaVe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BienSoXe" class="control-label"></label>
+                <select asp-for="BienSoXe" class="form-control" asp-items="ViewBag.BienSoXe"></select>
+                <span asp-validation-for="BienSoXe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenChuyenXe" class="control-label"></label>
+                <input asp-for="TenChuyenXe" class="form-control" />
+                <span asp-validation-for="TenChuyenXe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

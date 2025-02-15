@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Asp.netMVCQLBanVeXeKhach.Models.PhanQuyen>
+
+@{
+    ViewData["Title"] = "Danh Sách Quyền";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Danh Sách Quyền</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm Quyền Mới</a>
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.TenQuyen)</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenQuyen)</td>
+                <td>
+                    <form asp-action="Edit" asp-route-id="@item.MaQuyen" method="get" style="display:inline;">
+                        <button type="submit" class="btn btn-warning btn-sm">Sửa</button>
+                    </form>
+                    <form asp-action="Details" asp-route-id="@item.MaQuyen" method="get" style="display:inline;">
+                        <button type="submit" class="btn btn-info btn-sm">Chi Tiết</button>
+                    </form>
+                    <form asp-action="Delete" asp-route-id="@item.MaQuyen" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

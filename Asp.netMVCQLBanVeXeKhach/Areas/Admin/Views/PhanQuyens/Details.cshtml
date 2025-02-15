@@ -1,0 +1,22 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.PhanQuyen
+
+@{
+    ViewData["Title"] = "Chi Tiết Quyền";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Chi Tiết Quyền</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Quyền</th>
+        <td>@Model.MaQuyen</td>
+    </tr>
+    <tr>
+        <th>Tên Quyền</th>
+        <td>@Model.TenQuyen</td>
+    </tr>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.MaQuyen" class="btn btn-warning">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay Lại</a>

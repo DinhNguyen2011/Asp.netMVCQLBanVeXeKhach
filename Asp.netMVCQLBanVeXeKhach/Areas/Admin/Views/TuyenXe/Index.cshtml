@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Asp.netMVCQLBanVeXeKhach.Models.TuyenXe>
+
+@{
+    ViewData["Title"] = "Chỉnh sửa Tuyến Xe";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .table {
+        width: 80%; /* Giảm chiều rộng bảng xuống 80% */
+        margin: auto; /* Căn giữa bảng */
+        font-size: 14px; /* Thu nhỏ kích cỡ chữ */
+        border-collapse: collapse; /* Gộp đường viền */
+    }
+
+        .table th, .table td {
+            padding: 4px; /* Giảm khoảng cách bên trong ô */
+            text-align: center; /* Canh giữa nội dung ô */
+        }
+
+        .table th {
+            background-color: #f4f4f4; /* Thêm màu nền nhẹ cho tiêu đề */
+        }
+
+        .table td {
+            border: 1px solid #ddd; /* Thêm đường viền mỏng */
+        }
+
+    .btn {
+        font-size: 12px; /* Giảm kích thước chữ của nút */
+        padding: 5px 10px; /* Thu nhỏ khoảng cách trong nút */
+        margin: 10px; /* Giảm khoảng cách giữa các nút */
+        border-radius: 5px; /* Làm tròn góc của nút */
+    }
+
+    .btn-warning {
+        background-color: #ffc107; /* Màu nền cho nút sửa */
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Màu nền cho nút xóa */
+        color: white;
+    }
+
+</style>
+<h2>Danh sách tuyến xe</h2>
+<a href="@Url.Action("Create", "TuyenXe", new { area = "Admin" })" class="btn btn-primary">Thêm tuyến xe</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Tuyến</th>
+            <th>Điểm đi</th>
+            <th>Điểm đến</th>
+            <th>SNCTT</th>
+            <th>Giá hiện hành</th>
+            <th>Quảng đường</th>
+            <th>Bến Xe đi</th>
+            <th>Bến Xe đến</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaTuyen</td>
+                <td>@item.DiemDi</td>
+                <td>@item.DiemDen</td>
+                <td>@item.SoNgayChayTrongTuan</td>
+                <td>@item.GiaHienHanh?.ToString("N0") VNĐ</td>
+                <td>@item.QuangDuong</td>
+                <td>@item.MaBenXeNavigation?.TenBenXe</td>
+                <td>@item.MaBenXeDenNavigation?.TenBenXeDen</td>
+
+                <td>
+                    <a href="@Url.Action("Edit", "TuyenXe", new { area = "Admin", id = item.MaTuyen })" class="btn btn-warning">Sửa</a>
+                    <a href="@Url.Action("Delete", "TuyenXe", new { area = "Admin", id = item.MaTuyen })" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Bus Ticket System</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.jpg">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/_LayoutCss.css" />
+    @* <link rel="stylesheet" href="~/css/footer.css" /> *@
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="scrollProgressBar"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            @*navbar-light bg-light*@
+            <a class="navbar-brand" href=" @Url.Action("Index", "Home")">Bus Ticket System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"] as string == "Trang Chủ" ? "active" : "")" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"] as string == "Lịch Trình" ? "active" : "")" asp-controller="LichTrinh" asp-action="Index">Lịch trình</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"] as string == "Tra Cứu Vé" ? "active" : "")" asp-controller="TraCuuPhieuDatVe" asp-action="Index">Tra cứu vé</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewData["Title"] as string == "Liên Hệ" ? "active" : "")" asp-controller="LienHe" asp-action="Index">Liên hệ</a>
+                    </li>
+                    @if (ViewData["UserName"] != null)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hi, @ViewData["UserName"]
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Xem thông tin</a></li>
+                                <li><a class="dropdown-item" asp-controller="Home" asp-action="ThongTinVe">Xem các phiếu đặt vé</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Đăng nhập/Đăng ký</a>
+                        </li>
+                    }
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+  
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-white mt-auto py-4">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4 mb-3">
+                    <h5>Về Chúng Tôi</h5>
+                    <p>Bus Ticket System là giải pháp đặt vé xe khách nhanh chóng, tiện lợi và hiện đại.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-3">
+                    <h5>Thông Tin Liên Hệ</h5>
+                    <ul class="list-unstyled">
+                       
+                        <li><i class="fas fa-map-marker-alt me-2"></i> <a href="https://www.stu.edu.vn/" class="text-dark">Đại học Công Nghệ Sài Gòn</a></li>
+                        </li>
+                        <li><i class="fas fa-phone-alt me-2"></i> <a href="tel:+84853461030" class="text-dark">+84 853461030</a></li>
+                        <li><i class="fas fa-envelope me-2"></i> <a href="mailto:DH52110805@student.stu.edu.vn" class="text-dark">dinhn6666@busticketsystem.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-md-4 mb-3">
+                    <h5>Kết Nối Với Chúng Tôi</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/dinhn6666" class="text-dark" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://zalo.me/0853461030" class="text-dark" target="_blank"><i class="fas fa-comment"></i> Zalo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">© 2024 Bus Ticket System. Designed by Nguyễn Ái Thiềm Định.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar Scroll & Progress -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar');
+            const scrollProgress = document.getElementById('scrollProgressBar');
+
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {  //cuon theo doc
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+
+                const cuondoc = window.pageYOffset || document.documentElement.scrollTop;
+                const tongHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const tyle = (cuondoc / tongHeight) * 100;
+                scrollProgress.style.width = `${tyle}%`;
+
+
+                 scrollProgressBar.style.backgroundColor = 'red'; 
+            });
+
+
+            const lazyImages = document.querySelectorAll('img.lazy');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);// ngung theo doi khi cuon toi phan khac k co anh
+                    }
+                });
+            });
+
+            lazyImages.forEach((img) => observer.observe(img));
+        });
+     
+    </script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.TuyenXe
+@{
+    ViewData["Title"] = "Chỉnh sửa Tuyến Xe";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chỉnh sửa Tuyến Xe</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" name="MaTuyen" value="@Model.MaTuyen" />
+    <div class="form-group">
+        <label for="DiemDi">Điểm Đi</label>
+        <input type="text" class="form-control" id="DiemDi" name="DiemDi" value="@Model.DiemDi" required />
+    </div>
+    <div class="form-group">
+        <label for="DiemDen">Điểm Đến</label>
+        <input type="text" class="form-control" id="DiemDen" name="DiemDen" value="@Model.DiemDen" required />
+    </div>
+    <div class="form-group">
+        <label for="GiaHienHanh">Giá Hiện Hành</label>
+        <input type="number" class="form-control" id="GiaHienHanh" name="GiaHienHanh" value="@Model.GiaHienHanh" />
+    </div>
+    <div class="form-group">
+        <label for="QuangDuong">Quãng Đường</label>
+        <input type="number" class="form-control" id="QuangDuong" name="QuangDuong" value="@Model.QuangDuong" />
+    </div>
+    <button type="submit" class="btn btn-success">Cập nhật</button>
+    <a href="@Url.Action("Index", "TuyenXe", new { area = "Admin" })" class="btn btn-secondary">Hủy</a>
+</form>

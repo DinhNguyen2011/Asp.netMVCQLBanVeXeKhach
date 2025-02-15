@@ -1,0 +1,34 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.PhieuDatVe
+
+@{
+    ViewData["Title"] = "Chỉnh sửa phiếu đặt vé";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chỉnh sửa phiếu đặt vé</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MaPhieu" />
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NgayDat" class="control-label"></label>
+        <input asp-for="NgayDat" class="form-control" type="datetime-local" />
+        <span asp-validation-for="NgayDat" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TongTien" class="control-label"></label>
+        <input asp-for="TongTien" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="TongTien" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TrangThai" class="control-label"></label>
+        <input asp-for="TrangThai" class="form-control" />
+        <span asp-validation-for="TrangThai" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Cập nhật</button>
+    <a href="@Url.Action("Index", "PhieuDatVe")" class="btn btn-secondary">Hủy</a>
+</form>

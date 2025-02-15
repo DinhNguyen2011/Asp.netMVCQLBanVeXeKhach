@@ -1,0 +1,255 @@
+﻿/* Tùy chỉnh dấu chấm */
+.carousel-indicators li {
+    background-color: #888;
+}
+
+.carousel-indicators .active {
+    background-color: #555;
+}
+
+
+
+
+/* Form Container */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 70px 0px 70px 0px;
+}
+
+    /* Form Control */
+    .form-container .form-control, input[type="date"] {
+       
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+        .form-container .form-control:focus {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+            border-color: #0056b3;
+        }
+
+    /* Submit Button */
+    .form-container button[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+    }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+/* Container màu trong */ 
+.containerr {
+    margin-top: 20px;
+    background: #ffc10752;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+.carousel-item img{
+    border-radius:10px;
+} 
+/* Search Results */
+.search-results h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.search-results .trip-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .search-results .trip-item:hover {
+        background-color: #f1f1f1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Trip Info */
+    .search-results .trip-item .trip-info h3 {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .search-results .trip-item .trip-info p {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    /* Trip Actions */
+    .search-results .trip-item .trip-actions {
+        text-align: right;
+    }
+
+    .search-results .trip-item .select-button {
+        padding: 10px 20px;
+        background-color: #e67e22;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+        .search-results .trip-item .select-button:hover {
+            background-color: #d35400;
+        }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .search-results h1 {
+        font-size: 1.25rem;
+    }
+}
+
+/* General Trip Item Styles */
+.trip-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+    .trip-item:hover {
+        background-color: #f1f1f1;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+/* Card Styles */
+.card {
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-body {
+    padding: 20px;
+}
+.card-img-top{
+    border-radius:10px;
+}
+/* Warning Button */
+.btn-warning {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+}
+
+    .btn-warning:hover {
+        background-color: #e67e22;
+    }
+
+    /*khuyen mai*/
+.promotions-section {
+    margin: 40px auto;
+    text-align: center;
+    padding: 45px 20px 70px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.promotion-slider {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    overflow: hidden; /* cai nay do cuon*/
+}
+
+.promotion-card {
+    flex: 1;
+    max-width: 30%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .promotion-card img {
+        width: 100%;
+        display: block;
+        border-radius: 10px;
+    }
+
+    .promotion-card:hover {
+        transform: scale(1.05);
+    }
+
+/*Tuyen pho bien*/
+
+.popular-routes-section .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popular-routes-section .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.popular-routes-section .card-body {
+    text-align: center;
+    min-height:330px;
+}
+
+
+
+
+/*chat luong la danh du*/
+.bus-lines-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+    .bus-lines-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+.icon-box img {
+    width: 80px;
+    height: 80px;
+}
+
+.icon-box h5 {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.icon-box p {
+    color: #666;
+}
+
+

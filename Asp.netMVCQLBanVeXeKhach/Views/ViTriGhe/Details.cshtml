@@ -1,0 +1,32 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.Vitrighe
+
+@{
+    ViewData["Title"] = "Chi Tiết Vị Trí Ghế";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Vị Trí Ghế</h2>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Biển Số Xe:</th>
+                <td>@Model.Bienso</td>
+            </tr>
+            <tr>
+                <th>Tên Vị Trí:</th>
+                <td>@Model.Tenvitri</td>
+            </tr>
+            <tr>
+                <th>Trạng Thái:</th>
+                <td>@(Model.Trangthai.HasValue && Model.Trangthai.Value ? "Đang Hoạt Động" : "Không Hoạt Động")</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+
+        @* <a asp-action="Delete" asp-route-id="@Model.IdVitri" class="btn btn-danger">Xóa</a> *@
+    </div>
+</div>

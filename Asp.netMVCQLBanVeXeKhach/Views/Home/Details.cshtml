@@ -1,0 +1,19 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.PhieuDatVe
+
+@{
+    ViewData["Title"] = "Chi tiết phiếu đặt vé";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<h2>Chi tiết phiếu đặt vé</h2>
+
+<div class="mb-3">
+    <p><strong>Mã phiếu:</strong> @Model.MaPhieu</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Ngày đặt:</strong> @Model.NgayDat?.ToString("dd/MM/yyyy")</p>
+    <p><strong>Tổng tiền:</strong> @Model.TongTien?.ToString("N0") VNĐ</p>
+    <p><strong>Trạng thái:</strong> @Model.TrangThai</p>
+</div>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Quay lại</a>

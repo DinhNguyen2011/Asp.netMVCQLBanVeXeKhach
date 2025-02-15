@@ -1,0 +1,210 @@
+﻿/* Reset and base styles */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.legend {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+    .legend-icon.available {
+        background-color: #e3f2fd; /* Màu ghế còn trống */
+    }
+
+    .legend-icon.occupied {
+        background-color: #ef9a9a; /* Màu ghế đã chọn */
+    }
+
+    .legend-icon.selected {
+        background-color: #bbdefb;
+        border: 1px solid #1e88e5;
+    }
+
+/* Ticket Form and Modal */
+.ticket-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.ticket-form {
+    width: calc(70%);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.terms {
+    width: calc(30%);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .terms h5 {
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    .terms p {
+        color: #333;
+        line-height: 1.5;
+        font-size: 0.9rem;
+    }
+
+.btn-primary {
+    background-color: #1976d2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #1565c0;
+    }
+
+/* Seat Map */
+.seat-map-container {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.seat {
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+    .seat.seat-available {
+        background-color: #e3f2fd; /* Màu ghế còn trống */
+        color: #2196f3;
+    }
+
+    .seat.seat-occupied {
+        background-color: #ef9a9a; /* Màu ghế đã đặt */
+        color: #b71c1c;
+        cursor: not-allowed;
+    }
+
+    .seat.selected {
+        background-color: #bbdefb; /* Màu ghế được chọn */
+        border: 2px solid #1e88e5;
+        color: #0d47a1;
+    }
+
+    .seat:hover:not(.seat-occupied) {
+        transform: scale(1.1);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-body h3 {
+    color: #28a745;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-body p {
+    color: #555;
+    font-size: 16px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+    .close-btn:hover,
+    .close-btn:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+#closeModal {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+    #closeModal:hover {
+        background-color: #218838;
+    }

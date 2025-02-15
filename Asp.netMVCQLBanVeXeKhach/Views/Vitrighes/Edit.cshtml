@@ -1,0 +1,42 @@
+﻿@model Asp.netMVCQLBanVeXeKhach.Models.Vitrighe
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Chỉnh sửa vị trí ghế</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdVitri" />
+            <div class="form-group">
+                <label asp-for="Bienso" class="control-label"></label>
+                <select asp-for="Bienso" class="form-control" asp-items="ViewBag.Bienso"></select>
+                <span asp-validation-for="Bienso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tenvitri" class="control-label"></label>
+                <input asp-for="Tenvitri" class="form-control" />
+                <span asp-validation-for="Tenvitri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trangthai" class="control-label"></label>
+                <input asp-for="Trangthai" class="form-control" />
+                <span asp-validation-for="Trangthai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Trở về</a>
+</div>
+

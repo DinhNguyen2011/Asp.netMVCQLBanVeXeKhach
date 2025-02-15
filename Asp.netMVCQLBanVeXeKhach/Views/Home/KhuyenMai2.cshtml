@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Khuyến mãi Ngày Hội Vé";
+}
+
+<style>
+    /* CSS cho Trang Khuyến Mãi */
+    h1.text-success {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    p.text-muted {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    img.img-fluid {
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        img.img-fluid:hover {
+            transform: scale(1.05);
+        }
+
+    h2.text-danger {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .alert-info {
+        background-color: #e9f7ff;
+        border: 1px solid #bce8ff;
+        color: #31708f;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .container {
+        padding: 30px;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+</style>
+<div class="container mt-5">
+    <h1 class="text-center text-success">🎉 Khuyến Mãi Ngày Hội Vé 🎉</h1>
+    <p class="text-center text-muted">Cơ hội săn vé giá cực ưu đãi cho tuyến **Sài Gòn - Hà Nội** dịp Tết Tây & Noel!</p>
+    <div class="row mt-4">
+        <!-- Hình ảnh -->
+        <div class="col-md-6">
+            <img src="~/images/LangBac.jpg" alt="Khuyến mãi Ngày Hội Vé" class="img-fluid rounded shadow">
+        </div>
+
+        <!-- Nội dung -->
+        <div class="col-md-6">
+            <h2 class="text-danger">Chỉ 1.500.000 VNĐ cho tuyến Sài Gòn - Hà Nội!</h2>
+            <p>
+                ✨ Dịp Tết Tây và Noel năm nay, **BusSystem** mang đến chương trình khuyến mãi "Ngày Hội Vé" cực kỳ hấp dẫn! 
+                Bạn chỉ cần **1.500.000 VNĐ** để sở hữu một vé từ **Sài Gòn** đi **Hà Nội**. Không những vậy, chất lượng dịch vụ 
+                luôn đảm bảo với đầy đủ tiện nghi trên xe.
+            </p>
+            <p>
+                📅 Thời gian áp dụng: <b>Từ ngày 15/12 đến 31/12</b><br>
+                🚍 Tuyến áp dụng: <b>Sài Gòn - Hà Nội</b><br>
+                🕑 Số lượng vé có hạn, nhanh tay đặt ngay để không bỏ lỡ cơ hội!
+            </p>
+            <p>
+                💡 **Lưu ý**: Vé khuyến mãi chỉ áp dụng cho các chuyến xe cố định trong thời gian khuyến mãi. 
+                Hãy đặt vé trước ít nhất 3 ngày để được phục vụ tốt nhất.
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">Đặt vé ngay</a>
+        </div>
+    </div>
+
+    <!-- Thông báo -->
+    <div class="alert alert-info mt-4">
+        <b>🎄 Tận hưởng Tết Tây và Noel trọn vẹn cùng BusSystem! Chúng tôi luôn đồng hành cùng bạn trên mọi hành trình.</b>
+    </div>
+</div>

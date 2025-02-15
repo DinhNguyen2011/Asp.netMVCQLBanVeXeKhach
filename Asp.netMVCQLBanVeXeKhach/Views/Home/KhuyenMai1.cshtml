@@ -1,0 +1,76 @@
+﻿@model List<Asp.netMVCQLBanVeXeKhach.Models.TuyenXe>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuyến Mãi | BusSystem</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .promo-header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .promo-banner {
+            
+            background-size: cover;
+            
+            text-align: center;
+            padding: 100px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="promo-header">
+        <h1 class="text-primary">Khuyến Mãi HOT - Đi Tour Trả Góp 0% Lãi Suất!</h1>
+        <p class="text-secondary">Đặt vé ngay hôm nay với giá chỉ <strong>665.000đ</strong>!</p>
+    </header>
+
+    <!-- Banner --> 
+    <div class="promo-banner">
+        <h2 class="display-4">Trải nghiệm chuyến du lịch Thừa Thiên Huế - Đà Lạt</h2>
+        <p>Thanh toán linh hoạt - Không lo chi phí</p>
+    </div>
+
+    <!-- Promotion Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Promo Info -->
+            <div class="col-md-6">
+                <h3>Chi tiết khuyến mãi</h3>
+                <ul>
+                    <li>Giá vé: <strong>665.000đ</strong></li>
+                    <li>Hỗ trợ trả góp: <strong>0% lãi suất</strong></li>
+                    <li>Thời gian áp dụng: <strong>Hôm nay đến 31/12/2024</strong></li>
+                </ul>
+                <p>Đừng bỏ lỡ cơ hội vàng để tham gia các chuyến tour chất lượng với dịch vụ đẳng cấp! Chúng tôi cam kết mang lại trải nghiệm thoải mái, tiện nghi và đầy hứng khởi.</p>
+                <a href=" @Url.Action("Index", "Home")" class="btn btn-primary">Đặt Vé Ngay</a>
+            </div>
+            <!-- Promo Image -->
+            <div class="col-md-6">
+                <img src="~/images/KhuyenMai1.jpg" class="img-fluid rounded promo-card" alt="Khuyến mãi đi tour">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+   
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

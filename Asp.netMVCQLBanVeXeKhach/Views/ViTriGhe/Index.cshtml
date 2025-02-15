@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Asp.netMVCQLBanVeXeKhach.Models.Vitrighe>
+
+@{
+    ViewData["Title"] = "Danh Sách Vị Trí Ghế";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table-container {
+        width: 80%;
+        margin: auto; /* Căn giữa bảng */
+        max-height: 400px; /* Chiều cao tối đa của bảng */
+        overflow-y: auto; /* Kích hoạt cuộn dọc khi nội dung vượt quá */
+        border: 1px solid #ddd; /* Đường viền bao quanh bảng */
+        border-radius: 5px; /* Bo góc container */
+        padding: 5px; /* Khoảng cách trong container */
+    }
+
+    .table {
+        width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+        font-size: 14px; /* Thu nhỏ kích cỡ chữ */
+        border-collapse: collapse; /* Gộp đường viền */
+    }
+
+        .table th, .table td {
+            padding: 3px; /* Giảm khoảng cách bên trong ô */
+            text-align: center; /* Canh giữa nội dung ô */
+        }
+
+        .table th {
+            background-color: #f4f4f4; /* Thêm màu nền nhẹ cho tiêu đề */
+            position: sticky; /* Giữ tiêu đề cố định khi cuộn */
+            top: 0; /* Vị trí dính trên cùng */
+            z-index: 2; /* Đảm bảo tiêu đề không bị che */
+        }
+
+        .table td {
+            border: 1px solid #ddd; /* Thêm đường viền mỏng */
+        }
+
+    .btn {
+        font-size: 10px; /* Giảm kích thước chữ của nút */
+        padding: 5px 10px; /* Thu nhỏ khoảng cách trong nút */
+        margin: 8px; /* Giảm khoảng cách giữa các nút */
+        border-radius: 5px; /* Làm tròn góc của nút */
+    }
+
+    .btn-warning {
+        background-color: #ffc107; /* Màu nền cho nút sửa */
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Màu nền cho nút xóa */
+        color: white;
+    }
+
+</style>
+
+<h2>Danh Sách Vị Trí Ghế</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm Vị Trí Ghế</a>
+</p>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Biển Số Xe</th>
+                <th>Tên Vị Trí</th>
+                <th>Trạng Thái</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Bienso</td>
+                    <td>@item.Tenvitri</td>
+                    <td>@(item.Trangthai.HasValue && item.Trangthai.Value ? "Đã đặt" : "Còn trống")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.IdVitri" class="btn btn-info">Chi Tiết</a>
+                        <a asp-action="Edit" asp-controller="Vitrighes" asp-route-id="@item.IdVitri" class="btn btn-info">Sửa</a>
+                        <a asp-action="Delete" asp-controller="Vitrighes" asp-route-id="@item.IdVitri" class="btn btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
